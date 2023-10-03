@@ -4,7 +4,7 @@ import ContentLayout from '../../components/contentLayouts';
 import CocktailSearchBars from '../../components/cocktailSearchBars';
 import CocktailPanel from '../../components/cocktailPanel';
 import styles from '../../components/layouts.module.css';
-import utilStyles from '../../styles/utils.module.css';
+import utilStyles from '../../../styles/utils.module.css';
 import listOfCocktails from '../../data/cocktails.json';
 import { useState } from 'react';
 

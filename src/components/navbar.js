@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import utilStyles from '../styles/utils.module.css';
+import utilStyles from '../../styles/utils.module.css';
 
 function NavLink({to,children}){
     return <>
