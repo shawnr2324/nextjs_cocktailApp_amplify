@@ -42,14 +42,15 @@ export default function NavBar(){
             <MobileNav open={mobileMenuOpen} setOpen={setMobileMenuOpen}/>
             <div className="w-3/12 flex items-center">
                 <Link href="/" className="flex items-center">
-                    <Image 
+                    <img src="/images/shawn_Sarah.jpg"  className={`${utilStyles.borderCircle}`} alt="defaultImg" width="144" height="144"/>
+                    {/* <Image 
                         priority
                         className={`${utilStyles.borderCircle}`}
                         src="/images/shawn_Sarah.jpg" 
                         height={144}
                         width={144}
                         alt="defaultImg"
-                    />
+                    /> */}
                     <span className="self-center text-2xl font-semibold whitespace-nowrap text-black dark:text-white px-2">Our Bar</span>
                 </Link>
             </div>
