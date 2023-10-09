@@ -62,8 +62,7 @@ export default function CocktailSearchMain( {cocktails} ) {
     </>
 }
 
-export async function getStaticProps(){
-    const cocktailList = listOfCocktails;
+export async function getServerSideProps(){
     const result = await API.graphql({ query: listCocktails})
     console.log(result.data.listCocktails.items);
 
