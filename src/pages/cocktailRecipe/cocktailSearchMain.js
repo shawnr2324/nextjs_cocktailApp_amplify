@@ -64,10 +64,7 @@ export default function CocktailSearchMain( {cocktails} ) {
 
 export async function getServerSideProps(){
     const result = await API.graphql({ query: listCocktails})
-    console.log(result.data.listCocktails.items);
-
     const cocktailList_API = result.data.listCocktails.items
-    console.log(cocktailList_API);
 
     return{
         props: {
