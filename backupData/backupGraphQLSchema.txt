@@ -1,0 +1,66 @@
+# This "input" configures a global authorization rule to enable public access to
+# all models in this schema. Learn more about authorization rules here: https://docs.amplify.aws/cli/graphql/authorization-rules
+input AMPLIFY { globalAuthRule: AuthRule = { allow: public } } # FOR TESTING ONLY!
+
+type Cocktail @model @searchable{ 
+  id: ID! @primaryKey
+  name: String!
+  image: String
+  instructions: String!
+  garnish: [Garnish! ] 
+  dilution: [Dilution! ] 
+  accent: [Accent! ] 
+  modifier: [Modifier! ] 
+  base: [Base! ] @manyToMany(relationName: "CocktailBase")
+}
+
+type Garnish @model { 
+  id: ID!
+  name: Scale 
+  cocktail: [Cocktail] @manyToMany(relationName: "CocktailGarnish")
+}
+
+type Dilution implements Ingredient @model { 
+  id: ID!
+  name: String!
+  amount: Float 
+  scale: Scale 
+  cocktail: [Cocktail] @manyToMany(relationName: "CocktailDilution")
+}
+
+type Accent implements Ingredient @model { 
+  id: ID!
+  name: String!
+  amount: Float 
+  scale: Scale 
+  cocktail: [Cocktail] @manyToMany(relationName: "CocktailAccent")
+}
+
+type Modifier implements Ingredient @model { 
+  id: ID!
+  name: String!
+  amount: Float 
+  scale: Scale 
+  cocktail: [Cocktail] @manyToMany(relationName: "CocktailModifier")
+}
+
+type Base implements Ingredient @model { 
+  id: ID!
+  name: String!
+  amount: Float 
+  scale: Scale 
+  cocktail: [Cocktail] @manyToMany(relationName: "CocktailBase")
+}
+
+interface Ingredient {
+  id: ID!
+  name: String!
+  amount: Float
+  scale: Scale
+}
+
+enum Scale {
+  oz
+  dash
+  splash
+}

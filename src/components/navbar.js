@@ -24,11 +24,11 @@ function MobileNav({open, setOpen}){
                     Home
                 </Link>
                 <Link className="text-xl font-normal my-4 text-black dark:text-white" href="/cocktailRecipe/cocktailSearchMain" onClick={() => setTimeout(() => {setOpen(!open)}, 100)}>
-                    Recipes
+                    Cocktails
                 </Link>
-                {/* <Link className="text-xl font-normal my-4 text-black dark:text-white" href="/cocktailAdd/cocktailAdd_Form" onClick={() => setTimeout(() => {setOpen(!open)}, 100)}>
+                <Link className="text-xl font-normal my-4 text-black dark:text-white" href="/cocktailAdd/cocktailAdd_Page" onClick={() => setTimeout(() => {setOpen(!open)}, 100)}>
                     Add Recipe
-                </Link> */}
+                </Link>
             </div>  
         </div>
     )
@@ -61,7 +61,7 @@ export default function NavBar(){
                 }}>
                     {/* hamburger button lines */}
                     <span className={`h-1 w-full bg-black dark:bg-white rounded-lg transform transition duration-300 ease-in-out ${mobileMenuOpen ? "rotate-45 translate-y-3.5" : ""}`} />
-                    <span className={`h-1 w-full bg-black dark:bg-white rounded-lg transition-all duration-300 ease-in-out ${mobileMenuOpen ? "w-0" : "w-full"}`} />
+                    <span className={`h-1 bg-black dark:bg-white rounded-lg transition-all duration-300 ease-in-out ${mobileMenuOpen ? "w-0" : "w-full"}`} />
                     <span className={`h-1 w-full bg-black dark:bg-white rounded-lg transform transition duration-300 ease-in-out ${mobileMenuOpen ? "-rotate-45 -translate-y-3.5" : ""}`} />
                 </div>
 
@@ -70,11 +70,11 @@ export default function NavBar(){
                         Home
                     </NavLink>
                     <NavLink to="/cocktailRecipe/cocktailSearchMain">
-                        Recipes
+                        Cocktails
                     </NavLink>
-                    {/* <NavLink to="/cocktailAdd/cocktailAdd_Form">
+                    <NavLink to="/cocktailAdd/cocktailAdd_Page">
                         Add Recipe
-                    </NavLink> */}
+                    </NavLink>
                 </div>
             </div>
         </nav>

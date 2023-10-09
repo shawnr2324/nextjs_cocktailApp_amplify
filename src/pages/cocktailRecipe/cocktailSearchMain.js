@@ -5,19 +5,21 @@ import CocktailSearchBars from '../../components/cocktailSearchBars';
 import CocktailPanel from '../../components/cocktailPanel';
 import styles from '../../components/layouts.module.css';
 import utilStyles from '../../../styles/utils.module.css';
-import listOfCocktails from '../../data/cocktails.json';
+import listOfCocktails from '../../data/cocktails_v2.json';
 import { useState } from 'react';
+import { API } from 'aws-amplify';
+import { listCocktails } from '../../graphql/queries';
 
-export default function CocktailSearchMain( {cocktailList} ) {
+export default function CocktailSearchMain( {cocktails} ) {
     const [filterCocktail, setFilterCocktail] = useState('');
     const [filterBase, setFilterBase] = useState('');
     const [filterIngredients, setFilterIngredients] = useState('');
     const searchedCocktails = [];
     
-    cocktailList.forEach( (cocktail) => {
+    cocktails.forEach( (cocktail) => {
         let matchCocktail = filterCocktail == "" ? true : checkMatchCocktail(cocktail.name, filterCocktail);
-        let matchBase = filterBase == "" ? true : checkMatch_FirstLetter(cocktail.base, filterBase);
-        let matchIngredients = filterIngredients == "" ? true : checkMatch_AnyLetter([...cocktail.modifier, ...cocktail.accent, ...cocktail.dilution, ...cocktail.garnish], filterIngredients);
+        let matchBase = filterBase == "" ? true : checkMatch_FirstLetter(cocktail.ingredients, filterBase);
+        let matchIngredients = filterIngredients == "" ? true : checkMatch_AnyLetter([...cocktail.ingredients, ...cocktail.garnish], filterIngredients);
         if( ((!matchCocktail || !matchBase || !matchIngredients)) ){
             return;
         }
@@ -62,10 +64,15 @@ export default function CocktailSearchMain( {cocktailList} ) {
 
 export async function getStaticProps(){
     const cocktailList = listOfCocktails;
+    const result = await API.graphql({ query: listCocktails})
+    console.log(result.data.listCocktails.items);
+
+    const cocktailList_API = result.data.listCocktails.items
+    console.log(cocktailList_API);
 
     return{
         props: {
-            cocktailList,
+            cocktails: cocktailList_API,
         }
     }
 }
@@ -78,7 +85,7 @@ export function checkMatchCocktail(cocktailName, filterBase){
 export function checkMatch_FirstLetter(objectToMatch, userFilter){
     let match = false
     objectToMatch.forEach( (object) => {
-        if(object.name.toLowerCase().trim().indexOf(userFilter.toLowerCase()) == 0){
+        if(object.type == "base" && object.name.toLowerCase().trim().indexOf(userFilter.toLowerCase()) == 0){
             match = true;
             return;
         }
@@ -89,10 +96,9 @@ export function checkMatch_FirstLetter(objectToMatch, userFilter){
 export function checkMatch_AnyLetter(objectToMatch, userFilter){
     let match = false
     let matchArray = userFilter.split(',');
-    
     objectToMatch.forEach( (object) => {
         matchArray.forEach( (string) => {
-            if(object.name.toLowerCase().trim().indexOf(string.toLowerCase().trim() != '' ? string.toLowerCase().trim() :  userFilter) !== -1){
+            if(object.type != "base" && object.name.toLowerCase().trim().indexOf(string.toLowerCase().trim() != '' ? string.toLowerCase().trim() :  userFilter) !== -1){
                 match = true;
                 return;
             }

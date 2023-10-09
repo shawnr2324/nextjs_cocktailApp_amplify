@@ -1,0 +1,221 @@
+[
+    {
+        "name":"Old-Fashioned",
+        "ingredients": [
+            {
+                "type": "base",
+                "name":"Bourbon",
+                "amount":"2",
+                "scale":"oz"
+            },
+            {
+                "type": "accent",
+                "name":"Angostura Bitters",
+                "amount":3,
+                "scale":"dashes"
+            },
+            {
+                "type": "dilution",
+                "name":"warm water",
+                "amount":0,
+                "scale":"Splash of"
+            },
+            {
+                "type": "dilution",
+                "name":"Ice",
+                "amount":0,
+                "scale":""
+            }
+        ],
+        "garnish":[
+            { 
+                "name":"Orange peel"
+            }
+        ],
+        "image":"Old_Fashioned.jpeg",
+        "instructions":"In a double rocks glass, muddle the sugar cibe or sugar with Angostura bitters and a small splash of warm water until dissolved. If using simple syrup, swirl with bitters in a double rocks glass.Add whiskey and ice (preferably an oversized cube) and stir well. Garnish with an orange peel."
+    },
+    {
+        "name":"Negroni Spagliato",
+        "ingredients": [
+            {
+                "type": "base",
+                "name":"Prosecco",
+                "amount":3,
+                "scale":"oz"
+            },
+            {
+                "type": "modifier",
+                "name":"Campari",
+                "amount":1,
+                "scale":"oz"
+            },
+            {
+                "type": "modifier",
+                "name":"Sweet Vermouth",
+                "amount":1,
+                "scale":"oz"
+            },
+            {
+                "type": "dilution",
+                "name":"Ice",
+                "amount":0,
+                "scale":""
+            }
+        ],
+        "garnish":[
+            { 
+                "name":"Orange peel"
+            }
+        ],
+        "image":"negroni.jpg",
+        "instructions":"In a rocks or lowball glass, add Campari, sweet vermouth, and ice. Top with prosecco (or sparking wine) and stire gently to combine. Garnish with an orange peel."
+    },
+    {
+        "name":"Aviation",
+        "ingredients": [
+            {
+                "type": "base",
+                "name":"Gin",
+                "amount":2,
+                "scale":"oz"
+            },
+            {
+                "type": "modifier",
+                "name":"Crème De Violette",
+                "amount":0.25,
+                "scale":"oz"
+            },
+            {
+                "type": "modifier",
+                "name":"Maraschino Liqueur",
+                "amount":0.25,
+                "scale":"oz"
+            },
+            {
+                "type": "modifier",
+                "name":"Lemon Juice",
+                "amount":0.5,
+                "scale":"oz"
+            }
+        ],
+        "garnish":[
+            { 
+                "name":"Brandied Cherry"
+            }
+        ],
+        "image":"aviation.jpg",
+        "instructions":"Add all ingredients to a cocktail shaker. Fill shaker with ice and shake until chilled. Strain into a chilled coupe or cocktail glass. Garnish with a brandied cherry."
+    },
+    {
+        "name":"Tom Collins",
+        "ingredients": [
+            {
+                "type": "base",
+                "name":"Gin",
+                "amount":1.5,
+                "scale":"oz"
+            },
+            {
+                "type": "modifier",
+                "name":"Simple Syrup",
+                "amount":0.75,
+                "scale":"oz"
+            },
+            {
+                "type": "modifier",
+                "name":"Lemon Juice",
+                "amount":0.75,
+                "scale":"oz"
+            },
+            {
+                "type": "dilution",
+                "name":"Soda water",
+                "amount":0,
+                "scale":""
+            }
+        ],
+        "garnish":[
+            {
+                "name":"Brandied Cherry"
+            },
+            {
+                "name":"Orange Wheel"
+            }
+        ],
+        "image":"Tom_Collins.jpeg",
+        "instructions":"Add gin, lemon juice, and simple syrup to a cocktail shaker. Add ice and shake until chilled. Strain over ice into a Collins glass. Top with soda water. Garnish with a brandied cherry and an orange wheel."
+    },
+    {
+        "name":"Archangel",
+        "ingredients": [
+            {
+                "type": "base",
+                "name":"Gin",
+                "amount":2.5,
+                "scale":"oz"
+            },
+            {
+                "type": "modifier",
+                "name":"Aperol",
+                "amount":0.75,
+                "scale":"oz"
+            },
+            {
+                "type": "accent",
+                "name":"Cucumber Slices",
+                "amount":2,
+                "scale":""
+            }
+        ],
+        "garnish":[
+            { 
+                "name":"Lemon peel"
+            }
+        ],
+        "image":"Archangel_Cocktail.jpeg",
+        "instructions":"In a mixing glass, bruise cucumber slices with a muddler. Add gin, Aperol, and ice and stir until chilled. Strain into a chilled flute or cocktail glass. Garnish with a lemon peel."
+    },
+    {
+        "name":"Pisco Sour",
+        "ingredients": [
+            {
+                "type": "base",
+                "name":"Pisco",
+                "amount":2,
+                "scale":"oz"
+            },
+            {
+                "type": "modifier",
+                "name":"Lemon Juice",
+                "amount":0.75,
+                "scale":"oz"
+            },
+            {
+                "type": "modifier",
+                "name":"Simple Syrup",
+                "amount":0.5,
+                "scale":"oz"
+            },
+            {
+                "type": "modifier",
+                "name":"Egg white",
+                "amount":1,
+                "scale":"sm"
+            },
+            {
+                "type": "dilution",
+                "name":"Ice",
+                "amount":0,
+                "scale":""
+            }
+        ],
+        "garnish":[
+            {
+                "name":"Angostura bitters"
+            }
+        ],
+        "image":"Pisco_sour.jpeg",
+        "instructions":"Add all ingredients to a cocktail shaker and dry shake. Add ice to the shaker and shake well. Strain into a chilled coupe or cocktail glass. Garnish with a few drops of Angostura bitters."
+    }
+]

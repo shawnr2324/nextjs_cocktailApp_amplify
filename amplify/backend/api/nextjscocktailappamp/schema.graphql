@@ -5,62 +5,25 @@ input AMPLIFY { globalAuthRule: AuthRule = { allow: public } } # FOR TESTING ONL
 type Cocktail @model @searchable{ 
   id: ID! @primaryKey
   name: String!
-  image: String
   instructions: String!
-  garnish: [Garnish! ] @manyToMany(relationName: "CocktailGarnish")
-  dilution: [Dilution! ] @manyToMany(relationName: "CocktailDilution")
-  accent: [Accent! ] @manyToMany(relationName: "CocktailAccent")
-  modifier: [Modifier! ] @manyToMany(relationName: "CocktailModifier")
-  base: [Base! ] @manyToMany(relationName: "CocktailBase")
+  garnish: [Garnish! ] 
+  ingredients: [Ingredient! ]!
 }
 
-type Garnish @model { 
-  id: ID!
-  name: Scale 
-  cocktail: [Cocktail] @manyToMany(relationName: "CocktailGarnish")
-}
-
-type Dilution implements Ingredient @model { 
-  id: ID!
+type Garnish { 
   name: String!
-  amount: Float 
-  scale: Scale 
-  cocktail: [Cocktail] @manyToMany(relationName: "CocktailDilution")
 }
 
-type Accent implements Ingredient @model { 
-  id: ID!
+type Ingredient { 
+  type: IngredientType!
   name: String!
-  amount: Float 
-  scale: Scale 
-  cocktail: [Cocktail] @manyToMany(relationName: "CocktailAccent")
+  amount: String 
+  scale: String 
 }
 
-type Modifier implements Ingredient @model { 
-  id: ID!
-  name: String!
-  amount: Float 
-  scale: Scale 
-  cocktail: [Cocktail] @manyToMany(relationName: "CocktailModifier")
-}
-
-type Base implements Ingredient @model { 
-  id: ID!
-  name: String!
-  amount: Float 
-  scale: Scale 
-  cocktail: [Cocktail] @manyToMany(relationName: "CocktailBase")
-}
-
-interface Ingredient {
-  id: ID!
-  name: String!
-  amount: Float
-  scale: Scale
-}
-
-enum Scale {
-  oz
-  dash
-  splash
+enum IngredientType{
+  base
+  modifier
+  accent
+  dilution
 }
