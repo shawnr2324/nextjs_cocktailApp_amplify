@@ -6,7 +6,7 @@ import styles from './layouts.module.css';
 
 export default function CocktailPanel( {cocktail, filterBase, filterIngredients} ){
     return <>
-        <div className={`grid grid-cols-1 gap-3 py-5 px-4 border bg-gray-200 mx-auto`}>
+        <div className={`grid grid-cols-1 gap-3 py-5 px-4 border bg-gray-200`}>
             {/* <div className={`flex items-center justify-center`}>
                 <CocktailImage  cocktailImage={cocktail.image} 
                                 cocktailName={cocktail.name}>

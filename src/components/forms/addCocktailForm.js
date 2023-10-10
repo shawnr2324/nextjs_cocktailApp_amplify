@@ -56,6 +56,10 @@ export default function AddCocktailForm(){
         return false;
     };
 
+    const ignoreSpecialCharacters = (fieldValue) => {
+        return fieldValue.replace(/[-]/g, "");
+    };
+
     const onFormSubmit = async (data) => {
         console.log("Form Data:",data);
         const result = await API.graphql({
@@ -175,7 +179,7 @@ export default function AddCocktailForm(){
                                                                 {...register(`ingredients.${index}.amount`,  {
                                                                                 validate: {
                                                                                     nonNegativeNumber: (fieldValue) => { 
-                                                                                        return (dilutionMeasurementNotRequired(index) || fieldValue > 0) || "Amount must be greateer than 0.";
+                                                                                        return (dilutionMeasurementNotRequired(index) || ignoreSpecialCharacters(fieldValue) > 0) || "Amount must be greateer than 0.";
                                                                                     },
                                                                                 },
                                                                             },)
