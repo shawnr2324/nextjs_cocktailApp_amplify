@@ -9,8 +9,8 @@ export default function Home() {
         <title>{siteTitle}</title>
       </Head>
       <section className={utilStyles.headingMd}>
-        <p>We'd love to share our favorite drinks with you! Look through our cocktail collection by clicking 'Recipes'!
-          {/* Feel free to share your own favorite cocktails by clicking 'Add Recipe' in the top right corner! */}
+        <p>We'd love to share our favorite drinks with you! Look through our cocktail collection by clicking 'Cocktails'!
+          Feel free to share your own favorite cocktail recipes by clicking 'Add Recipe' in the top right corner.
         </p>
       </section>
     </Layout>
