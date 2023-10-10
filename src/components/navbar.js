@@ -6,7 +6,7 @@ import utilStyles from '../../styles/utils.module.css';
 function NavLink({to,children}){
     return <>
         <Link 
-            href={to} className={`mx-4 text-black dark:text-white`}>
+            href={to} className={`mx-4 text-white dark:text-white`}>
             {children}
         </Link>
     </>
