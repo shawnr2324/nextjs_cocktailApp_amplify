@@ -15,18 +15,18 @@ function NavLink({to,children}){
 
 function MobileNav({open, setOpen}){
     return (
-        <div className={`absolute top-0 left-0 h-screen w-screen bg-white dark:bg-gray-900 transform ${open ? "-translate-x-0" : "-translate-x-full"} transition-transform duration-300 ease-in-out filter drop-shadow-md `}>
+        <div className={`absolute top-0 left-0 h-screen w-screen bg-gray-900 dark:bg-gray-900 transform ${open ? "-translate-x-0" : "-translate-x-full"} transition-transform duration-300 ease-in-out filter drop-shadow-md `}>
             <div className="flex items-center justify-center filter drop-shadow-md bg-white dark:bg-gray-900 h-20"> {/*logo container*/}
-                <Link className="text-xl font-semibold text-black dark:text-white" href="/">Our Bar</Link>
+                <Link className="text-xl font-semibold text-white dark:text-white" href="/">Our Bar</Link>
             </div>
             <div className="flex flex-col ml-4">
-                <Link className="text-xl font-medium my-4 text-black dark:text-white" href="/" onClick={() => setTimeout(() => {setOpen(!open)}, 100)}>
+                <Link className="text-xl font-medium my-4 text-white dark:text-white" href="/" onClick={() => setTimeout(() => {setOpen(!open)}, 100)}>
                     Home
                 </Link>
-                <Link className="text-xl font-normal my-4 text-black dark:text-white" href="/cocktailRecipe/cocktailSearchMain" onClick={() => setTimeout(() => {setOpen(!open)}, 100)}>
+                <Link className="text-xl font-normal my-4 text-white dark:text-white" href="/cocktailRecipe/cocktailSearchMain" onClick={() => setTimeout(() => {setOpen(!open)}, 100)}>
                     Cocktails
                 </Link>
-                <Link className="text-xl font-normal my-4 text-black dark:text-white" href="/cocktailAdd/cocktailAdd_Page" onClick={() => setTimeout(() => {setOpen(!open)}, 100)}>
+                <Link className="text-xl font-normal my-4 text-white dark:text-white" href="/cocktailAdd/cocktailAdd_Page" onClick={() => setTimeout(() => {setOpen(!open)}, 100)}>
                     Add Recipe
                 </Link>
             </div>  
@@ -38,7 +38,7 @@ function MobileNav({open, setOpen}){
 export default function NavBar(){
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
     return (
-        <nav className="flex filter drop-shadow-md bg-white dark:bg-gray-900 px-4 py-4 h-20 items-center fixed w-full z-20 top-0 left-0 ">
+        <nav className="flex filter drop-shadow-md bg-gray-900 dark:bg-gray-900 px-4 py-4 h-20 items-center fixed w-full z-20 top-0 left-0 ">
             <MobileNav open={mobileMenuOpen} setOpen={setMobileMenuOpen}/>
             <div className="w-3/12 flex items-center">
                 <Link href="/" className="flex items-center">
@@ -51,7 +51,7 @@ export default function NavBar(){
                         width={144}
                         alt="defaultImg"
                     /> */}
-                    <span className="self-center text-2xl font-semibold whitespace-nowrap text-black dark:text-white px-2">Our Bar</span>
+                    <span className="self-center text-2xl font-semibold whitespace-nowrap text-white dark:text-white px-2">Our Bar</span>
                 </Link>
             </div>
             <div className="w-9/12 flex justify-end items-center">
@@ -60,9 +60,9 @@ export default function NavBar(){
                     setMobileMenuOpen(!mobileMenuOpen)
                 }}>
                     {/* hamburger button lines */}
-                    <span className={`h-1 w-full bg-black dark:bg-white rounded-lg transform transition duration-300 ease-in-out ${mobileMenuOpen ? "rotate-45 translate-y-3.5" : ""}`} />
-                    <span className={`h-1 bg-black dark:bg-white rounded-lg transition-all duration-300 ease-in-out ${mobileMenuOpen ? "w-0" : "w-full"}`} />
-                    <span className={`h-1 w-full bg-black dark:bg-white rounded-lg transform transition duration-300 ease-in-out ${mobileMenuOpen ? "-rotate-45 -translate-y-3.5" : ""}`} />
+                    <span className={`h-1 w-full bg-white dark:bg-white rounded-lg transform transition duration-300 ease-in-out ${mobileMenuOpen ? "rotate-45 translate-y-3.5" : ""}`} />
+                    <span className={`h-1 bg-white dark:bg-white rounded-lg transition-all duration-300 ease-in-out ${mobileMenuOpen ? "w-0" : "w-full"}`} />
+                    <span className={`h-1 w-full bg-white dark:bg-white rounded-lg transform transition duration-300 ease-in-out ${mobileMenuOpen ? "-rotate-45 -translate-y-3.5" : ""}`} />
                 </div>
 
                 <div className="hidden md:flex">
